@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-KEY = "AIzaSyBeeUo8B4HCPo4NFpBYJy9j-0rLd3OViaU"
+KEY = "Put Your Gemini API key here "
 genai.configure(api_key=KEY)
 
 print("Listing supported models...")
