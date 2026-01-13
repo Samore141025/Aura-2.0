@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        @apply text-slate-900 antialiased;
+        font-family: 'Outfit', sans-serif;
+        background: linear-gradient(-45deg, #eef2ff, #f0f9ff, #faf5ff, #fdf4ff);
+        background-size: 400% 400%;
+        animation: gradient-animation 15s ease infinite;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: 'Outfit', sans-serif;
+        @apply tracking-tight;
+    }
+}
+
+@layer components {
+    .glass {
+        @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+    }
+
+    .chat-bubble-user {
+        @apply bg-aura-600 text-white rounded-[24px] rounded-tr-none px-5 py-3 max-w-[85%] shadow-md;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .chat-bubble-aura {
+        @apply bg-white/80 text-slate-800 rounded-[24px] rounded-tl-none px-5 py-3 max-w-[85%] shadow-sm border border-white/50;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@layer utilities {
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
